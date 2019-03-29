@@ -1,0 +1,18 @@
+apiVersion: serving.knative.dev/v1alpha1 # Current version of Knative
+kind: Service
+metadata:
+  name: gowebhello
+  namespace: default
+spec:
+  runLatest:
+    configuration:
+      revisionTemplate:
+        spec:
+          container:
+            #image: gcr.io/knative-samples/helloworld-go # from GCR
+            image: udhos/web-scratch # from docker hub
+            env:
+              - name: TARGET
+                value: "env-var-target-value"
+              - name: GWH_BANNER
+                value: "hello from knative"
