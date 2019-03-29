@@ -29,8 +29,11 @@ msg then hit ENTER to continue
 
 read i
 
-msg get the app URL:
+msg IP Address:
+kubectl get svc istio-ingressgateway --namespace istio-system
+msg URL:
 kubectl get ksvc $APP_NAME --output=custom-columns=NAME:.metadata.name,DOMAIN:.status.domain
+kubectl get ksvc $APP_NAME
 
 IP_ADDRESS=$(kubectl get svc istio-ingressgateway --namespace istio-system --output 'jsonpath={.status.loadBalancer.ingress[0].ip}')
 HOST_URL=$(kubectl get ksvc $APP_NAME --output jsonpath='{.status.domain}')
