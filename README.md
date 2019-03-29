@@ -17,6 +17,7 @@ Recipe:
 
 Authorize 'gcloud':
 
+    gcloud auth list
     gcloud auth login
 
 # Grab knative-hello
@@ -26,3 +27,7 @@ Authorize 'gcloud':
 # Run script
 
     ./knative-install.sh
+
+# Knative install docs
+
+https://www.knative.dev/docs/install/knative-with-gke/
