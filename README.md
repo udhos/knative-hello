@@ -24,10 +24,27 @@ Authorize 'gcloud':
 
     git clone https://github.com/udhos/knative-hello
 
-# Run script
+# Create clulster and install knative
 
     ./knative-install.sh
+
+# Deploy an application
+
+    ./knative-app-deploy.sh
+
+# Check knative version
+
+https://www.knative.dev/docs/install/check-install-version/
+
+Get the container image URL with the command below, open it in a browser and look for the tags.
+
+    kubectl describe deploy controller --namespace knative-serving
+
+# Delete everything (the whole cluster)
+
+    ./knative-delete.sh
 
 # Knative install docs
 
 https://www.knative.dev/docs/install/knative-with-gke/
+
