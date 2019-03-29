@@ -23,7 +23,7 @@ msg
 msg APP_NAME=$APP_NAME
 msg
 msg kubectl get svc istio-ingressgateway --namespace istio-system
-msg kubectl get ksvc gowebhello 
+msg kubectl get ksvc $APP_NAME 
 msg
 msg then hit ENTER to continue
 
