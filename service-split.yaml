@@ -4,7 +4,12 @@ metadata:
   name: gowebhello
   namespace: default
 spec:
-  runLatest:
+  release:
+    # Ordered list of 1 or 2 revisions. 
+    # First revision is traffic target "current"
+    # Second revision is traffic target "candidate"
+    revisions: ["gowebhello-b7kk6", "gowebhello-jfjw6"]
+    rolloutPercent: 20 # Percent [0-99] of traffic to route to "candidate" revision
     configuration:
       revisionTemplate:
         spec:
@@ -13,6 +18,7 @@ spec:
             image: udhos/web-scratch # from docker hub
             env:
               - name: TARGET
-                value: "env-var-target-value-v1"
+                value: "env-var-target-value-v4"
               - name: GWH_BANNER
-                value: "hello from knative v1"
+                value: "hello from knative v4"
+
