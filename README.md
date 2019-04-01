@@ -44,6 +44,16 @@ Get the container image URL with the command below, open it in a browser and loo
 
     ./knative-delete.sh
 
+# Serving logs
+
+Proxy for Kibana UI:
+
+    kubectl proxy --address 0.0.0.0 --accept-hosts '.*'
+
+Open: http://localhost:8001/api/v1/namespaces/knative-monitoring/services/kibana-logging/proxy/app/kibana
+
+https://www.knative.dev/docs/serving/accessing-logs/
+
 # Knative install docs
 
 https://www.knative.dev/docs/install/knative-with-gke/
