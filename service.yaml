@@ -13,6 +13,6 @@ spec:
             image: udhos/web-scratch # from docker hub
             env:
               - name: TARGET
-                value: "env-var-target-value"
+                value: "env-var-target-value-v2"
               - name: GWH_BANNER
-                value: "hello from knative"
+                value: "hello from knative v2"
