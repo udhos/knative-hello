@@ -14,9 +14,11 @@ die() {
 	exit 1
 }
 
-cmd="kubectl get deployment,ksvc,configuration,revision,route"
+cmd="kubectl get pods,deployment,ksvc,configuration,revision,route"
 
 msg 'checking that pods are created and all Knative constructs (service, configuration, revision, route) have been deployed:'
+msg
+msg "ATTENTION: if you don't see any pod, your app might have been scaled down to zero"
 msg
 msg $cmd
 
