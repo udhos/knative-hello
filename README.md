@@ -30,7 +30,23 @@ Authorize 'gcloud':
 
 # Deploy an application
 
-    ./knative-app-deploy.sh
+    ./knative-app-deploy.sh ;# will deploy service.yaml
+
+## Deploy V2
+
+    kubectl apply -f service-v2.yaml
+
+## Scale down to one (instead of zero)
+
+    kubectl apply -f service-scaledownto1.yaml
+
+## Split traffic among revisions
+
+CAUTION: Before applying service-split.yaml, edit the file and specify known existing revisions:
+
+    revisions: ["gowebhello-b7kk6", "gowebhello-jfjw6"]
+
+    kubectl apply -f service-split.yaml
 
 # Check knative version
 
