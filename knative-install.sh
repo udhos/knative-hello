@@ -52,7 +52,9 @@ kubectl apply --filename https://github.com/knative/serving/releases/download/v0
 # label the default namespace with istio-injection=enabled
 kubectl label namespace default istio-injection=enabled
 
+msg
 msg monitor the Istio components until all of the components show a STATUS of Running or Completed:
+msg
 msg kubectl get pods --namespace istio-system --watch
 msg 
 msg then hit ENTER to continue
