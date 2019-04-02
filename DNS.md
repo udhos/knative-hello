@@ -35,6 +35,10 @@ Check the domain:
     NAME         DOMAIN                                    LATESTCREATED      LATESTREADY        READY   REASON
     gowebhello   gowebhello.default.35.198.25.100.nip.io   gowebhello-kzb8v   gowebhello-kzb8v   True
 
+Get domain configuration:
+
+    kubectl get cm config-domain --namespace knative-serving -o=yaml
+
 # References
 
 See: https://github.com/meteatamel/knative-tutorial/blob/master/docs/02-configuredomain.md
