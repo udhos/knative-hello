@@ -19,19 +19,14 @@ __EOF__
 dns() {
 
 cat <<__EOF__
-apiVersion: v1
 data:
   $DOMAIN: ""
-kind: ConfigMap
-metadata:
-  name: config-domain
-  namespace: knative-serving
 __EOF__
 
 }
 
-msg applying:
+msg patching:
 
 dns
 
-dns | kubectl apply -f -
+dns | kubectl patch cm config-domain -n knative-serving -p "$(dns)"
